@@ -94,13 +94,13 @@ async function generateImage(topic) {
     console.log('🎨 Generating illustration...');
     
     const response = await axios.post(
-      'https://ai.api.nvidia.com/v1/genai/blackforestlabs/flux-1-schnell',
+      'https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-schnell',
       {
         prompt: imagePrompt,
+        width: 1024,
+        height: 1024,
         seed: Math.floor(Math.random() * 1000000),
-        num_inference_steps: 4,
-        guidance_scale: 3.5,
-        aspect_ratio: "1:1"
+        steps: 4
       },
       {
         headers: {
@@ -112,7 +112,7 @@ async function generateImage(topic) {
       }
     );
 
-    if (response.data && response.data.image) {
+    if (response.status === 200 && response.data && response.data.image) {
       // Decode base64 image
       const imageBuffer = Buffer.from(response.data.image, 'base64');
       const imageFileName = `${generateSlug(topic.title)}-${Date.now()}.jpg`;
