@@ -67,14 +67,31 @@ function saveGeneratedTopics(data) {
   fs.writeFileSync(GENERATED_TOPICS_FILE, JSON.stringify(data, null, 2));
 }
 
+// Utility: Check if article already exists
+function articleExists(topic) {
+  const slug = generateSlug(topic.title);
+  const files = fs.readdirSync(ARTICLES_DIR);
+  return files.some(file => file.includes(slug));
+}
+
 // Utility: Select unused topic
 function selectUnusedTopic(topics, generated) {
-  const unused = topics.filter(topic => !generated.includes(topic.title));
-  
+  // Filter out topics already in tracking AND topics with existing files
+  const unused = topics.filter(topic => {
+    const inTracking = !generated.includes(topic.title);
+    const fileExists = articleExists(topic);
+    return inTracking && !fileExists;
+  });
+
   if (unused.length === 0) {
-    console.log('⚠️  All topics have been generated. Resetting tracking file...');
+    console.log('⚠️ All topics have been generated. Resetting tracking file...');
     return { topic: topics[0], reset: true };
   }
+
+  // Random selection
+  const randomIndex = Math.floor(Math.random() * unused.length);
+  return { topic: unused[randomIndex], reset: false };
+}
   
   // Random selection
   const randomIndex = Math.floor(Math.random() * unused.length);
@@ -112,12 +129,22 @@ async function generateImage(topic) {
       }
     );
 
-    if (response.status === 200 && response.data && response.data.image) {
+    let imageData = null;
+    
+    // Check for different response formats
+    if (response.data && response.data.image) {
+      imageData = response.data.image;
+    } else if (response.data && response.data.artifacts && response.data.artifacts.length > 0) {
+      // FLUX API returns artifacts array with base64 images
+      imageData = response.data.artifacts[0].base64 || response.data.artifacts[0];
+    }
+
+    if (imageData) {
       // Decode base64 image
-      const imageBuffer = Buffer.from(response.data.image, 'base64');
+      const imageBuffer = Buffer.from(imageData, 'base64');
       const imageFileName = `${generateSlug(topic.title)}-${Date.now()}.jpg`;
       const imagePath = path.join(IMAGES_DIR, imageFileName);
-      
+
       fs.writeFileSync(imagePath, imageBuffer);
       console.log(`✅ Image generated: ${imageFileName}`);
       
