@@ -5,9 +5,6 @@ on:
     # Run daily at 10:17 AM UTC
     - cron: '17 10 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   generate:
@@ -24,8 +21,8 @@ jobs:
       with:
         node-version: '20'
     
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm install
     
     - name: Generate new article
       run: npm run generate
