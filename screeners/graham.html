@@ -1,0 +1,171 @@
+---
+layout: default
+title: "Graham Screener - Find Bargains with Margin of Safety"
+description: "Benjamin Graham's value investing criteria. Find stocks trading below intrinsic value with strong balance sheets and dividend history."
+permalink: /screeners/graham/
+---
+
+<section class="page-header screener-header graham-header">
+  <div class="container">
+    <div class="screener-title">
+      <div class="screener-emoji">📖</div>
+      <h1>The Graham Screener</h1>
+      <p class="tagline">"In the short run, the market is a voting machine, but in the long run it is a weighing machine."</p>
+      <p class="attribution">— Benjamin Graham</p>
+    </div>
+  </div>
+</section>
+
+<section class="screener-info">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-main">
+        <h2>Benjamin Graham's Philosophy</h2>
+        <p>Benjamin Graham is known as the "Father of Value Investing." His 1949 book "The Intelligent Investor" is considered the bible of investing and was Warren Buffett's primary education.</p>
+        
+        <h3>Key Principles</h3>
+        <ul>
+          <li><strong>Mr. Market:</strong> The market is irrational - exploit its mood swings</li>
+          <li><strong>Margin of Safety:</strong> Only buy when price is below intrinsic value</li>
+          <li><strong>Quantitative Analysis:</strong> Focus on hard numbers, not stories</li>
+          <li><strong>Defensive Investing:</strong> Protect capital first, grow it second</li>
+          <li><strong>Diversification:</strong> Don't put all eggs in one basket</li>
+        </ul>
+        
+        <div class="fun-fact">
+          <h4>💡 Did You Know?</h4>
+          <p>Graham taught Warren Buffett at Columbia Business School. Buffett says reading Graham's book was like "seeing the world in color for the first time."</p>
+        </div>
+      </div>
+      
+      <div class="info-sidebar">
+        <div class="criteria-card graham-card">
+          <h3>Screener Criteria</h3>
+          <div class="criterion">
+            <div class="criterion-name">P/E Ratio</div>
+            <div class="criterion-value">< 15</div>
+            <div class="criterion-desc">Earnings multiple</div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-name">P/B Ratio</div>
+            <div class="criterion-value">< 1.5</div>
+            <div class="criterion-desc">Price to book value</div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-name">Dividend Yield</div>
+            <div class="criterion-value">> 3%</div>
+            <div class="criterion-desc">Income component</div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-name">Current Ratio</div>
+            <div class="criterion-value">> 2</div>
+            <div class="criterion-desc">Liquidity measure</div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-name">Debt/Equity</div>
+            <div class="criterion-value">< 1</div>
+            <div class="criterion-desc">Conservative leverage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screener-demo">
+  <div class="container">
+    <h2 class="section-title">Example Results</h2>
+    <p class="section-description">Companies matching Graham's criteria (for educational purposes only)</p>
+    
+    <div class="results-table-container">
+      <div class="results-header">
+        <span class="disclaimer-badge">📚 Educational Data</span>
+        <span class="update-time">Updated: Delayed data for learning purposes</span>
+      </div>
+      
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Ticker</th>
+            <th>P/E</th>
+            <th>P/B</th>
+            <th>Yield</th>
+            <th>Current</th>
+            <th>Margin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bank of America</strong><br><span class="company-desc">Banking</span></td>
+            <td class="ticker">BAC</td>
+            <td class="metric good">12.4</td>
+            <td class="metric good">1.1</td>
+            <td class="metric good">2.9%</td>
+            <td class="metric good">2.4</td>
+            <td><span class="margin-badge high">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Walgreens</strong><br><span class="company-desc">Pharmacy retail</span></td>
+            <td class="ticker">WBA</td>
+            <td class="metric good">8.2</td>
+            <td class="metric good">1.2</td>
+            <td class="metric good">4.8%</td>
+            <td class="metric good">2.8</td>
+            <td><span class="margin-badge high">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Verizon</strong><br><span class="company-desc">Telecommunications</span></td>
+            <td class="ticker">VZ</td>
+            <td class="metric good">9.1</td>
+            <td class="metric warn">1.8</td>
+            <td class="metric good">6.7%</td>
+            <td class="metric good">2.1</td>
+            <td><span class="margin-badge moderate">Moderate</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="screener-actions">
+      <a href="/screeners" class="btn btn-secondary">← Back to Screeners</a>
+      <a href="/articles" class="btn btn-primary">Learn More About Graham</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.graham-header {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.graham-card {
+  border-color: #10b981;
+}
+
+.graham-card h3 {
+  color: #10b981;
+}
+
+.graham-card .criterion-value {
+  color: #10b981;
+}
+
+.margin-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.margin-badge.high {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.margin-badge.moderate {
+  background: #fef3c7;
+  color: #92400e;
+}
+</style>

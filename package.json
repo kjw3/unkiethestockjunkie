@@ -1,0 +1,38 @@
+{
+  "name": "unkiethestockjunkie",
+  "version": "1.0.0",
+  "description": "Investing education for smart teens - Automated content generation with legendary investor strategies",
+  "main": "scripts/generate-article.js",
+  "scripts": {
+    "generate": "node scripts/generate-article.js",
+    "add-topic": "node scripts/add-topic.js",
+    "show-tags": "node scripts/show-tags.js",
+    "check-links": "node scripts/check-links.js",
+    "add-images": "node scripts/add-images-retroactive.js",
+    "dev": "bundle exec jekyll serve --livereload",
+    "build": "bundle exec jekyll build"
+  },
+  "keywords": [
+    "investing",
+    "education",
+    "teenagers",
+    "stocks",
+    "warren-buffett",
+    "benjamin-graham",
+    "peter-lynch",
+    "value-investing",
+    "jekyll",
+    "ai-content"
+  ],
+  "author": "Unkie The Stock Junkie",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "inquirer": "^9.2.12"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

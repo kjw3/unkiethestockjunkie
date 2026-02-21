@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+<article class="article">
+  <div class="container">
+    <header class="article-header">
+      {% if page.image %}
+        <div class="article-image">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+        </div>
+      {% endif %}
+      
+      <div class="article-meta">
+        {% if page.difficulty %}
+          <span class="difficulty-badge difficulty-{{ page.difficulty }}">
+            {{ page.difficulty | capitalize }}
+          </span>
+        {% endif %}
+        
+        {% if page.tags %}
+          <div class="article-tags">
+            {% for tag in page.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+      </div>
+      
+      <h1 class="article-title">{{ page.title }}</h1>
+      
+      {% if page.description %}
+        <p class="article-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
+    
+    <div class="article-content">
+      {{ content }}
+    </div>
+    
+    <footer class="article-footer">
+      {% if page.related_articles %}
+        <div class="related-articles">
+          <h3>Continue Learning</h3>
+          <div class="related-grid">
+            {% for related in page.related_articles %}
+              <a href="{{ related.url }}" class="related-card">
+                <h4>{{ related.title }}</h4>
+                <p>{{ related.description }}</p>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      
+      <div class="article-disclaimer">
+        <strong>⚠️ Educational Purpose Only:</strong> 
+        This article is for educational purposes only and does not constitute financial advice. 
+        Investing involves risk, including loss of principal. Always do your own research and 
+        consider consulting a qualified financial advisor.
+      </div>
+      
+      <div class="article-share">
+        <h3>Share this article</h3>
+        <div class="share-buttons">
+          <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}" 
+             target="_blank" rel="noopener" class="share-btn twitter">Twitter</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" 
+             target="_blank" rel="noopener" class="share-btn facebook">Facebook</a>
+          <a href="mailto:?subject={{ page.title | url_encode }}&body=Check out this article: {{ page.url | absolute_url | url_encode }}" 
+             class="share-btn email">Email</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</article>

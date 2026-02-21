@@ -1,0 +1,572 @@
+[
+  {
+    "title": "What is a Stock? A Teen's First Guide",
+    "difficulty": "beginner",
+    "tags": ["stocks", "basics", "fundamentals", "beginner"],
+    "description": "Learn what stocks are, how they work, and why companies sell them."
+  },
+  {
+    "title": "Understanding the Stock Market: A Playground for Investors",
+    "difficulty": "beginner",
+    "tags": ["stock-market", "basics", "exchanges", "beginner"],
+    "description": "How the stock market works and where all the trading happens."
+  },
+  {
+    "title": "Bulls vs Bears: Understanding Market Trends",
+    "difficulty": "beginner",
+    "tags": ["market-trends", "terminology", "beginner"],
+    "description": "What bullish and bearish markets mean and how to spot them."
+  },
+  {
+    "title": "Compound Interest: The Eighth Wonder of the World",
+    "difficulty": "beginner",
+    "tags": ["compound-interest", "math", "wealth-building", "beginner"],
+    "description": "Why starting early gives you a massive advantage in investing."
+  },
+  {
+    "title": "Stock Exchanges: NYSE vs NASDAQ Explained",
+    "difficulty": "beginner",
+    "tags": ["exchanges", "stock-market", "basics", "beginner"],
+    "description": "The difference between major stock exchanges and how they operate."
+  },
+  {
+    "title": "What is a Dividend? Getting Paid to Own Stocks",
+    "difficulty": "beginner",
+    "tags": ["dividends", "income", "basics", "beginner"],
+    "description": "How companies share profits with shareholders through dividends."
+  },
+  {
+    "title": "Market Cap: Size Matters in Investing",
+    "difficulty": "beginner",
+    "tags": ["market-cap", "valuation", "basics", "beginner"],
+    "description": "Understanding large-cap, mid-cap, and small-cap stocks."
+  },
+  {
+    "title": "Stock Ticker Symbols: Decoding the Abbreviations",
+    "difficulty": "beginner",
+    "tags": ["ticker-symbols", "terminology", "basics", "beginner"],
+    "description": "How to read and understand stock ticker symbols."
+  },
+  {
+    "title": "Buy Low, Sell High: The Golden Rule",
+    "difficulty": "beginner",
+    "tags": ["strategy", "basics", "beginner"],
+    "description": "The simple principle behind profitable investing."
+  },
+  {
+    "title": "What is an IPO? When Companies Go Public",
+    "difficulty": "beginner",
+    "tags": ["ipo", "public-offering", "basics", "beginner"],
+    "description": "How and why companies sell shares to the public for the first time."
+  },
+  {
+    "title": "Risk and Reward: The Investing Balance",
+    "difficulty": "beginner",
+    "tags": ["risk", "basics", "psychology", "beginner"],
+    "description": "Understanding the relationship between risk and potential returns."
+  },
+  {
+    "title": "Diversification: Don't Put All Your Eggs in One Basket",
+    "difficulty": "beginner",
+    "tags": ["diversification", "risk-management", "strategy", "beginner"],
+    "description": "Why spreading your investments reduces risk."
+  },
+  {
+    "title": "Long-term vs Short-term Investing",
+    "difficulty": "beginner",
+    "tags": ["time-horizon", "strategy", "beginner"],
+    "description": "The difference between day trading and buy-and-hold investing."
+  },
+  {
+    "title": "What is Volume and Why Does It Matter?",
+    "difficulty": "beginner",
+    "tags": ["volume", "trading", "technical-analysis", "beginner"],
+    "description": "Understanding trading volume and its importance in market analysis."
+  },
+  {
+    "title": "Stock Splits: When Companies Multiply Your Shares",
+    "difficulty": "beginner",
+    "tags": ["stock-splits", "corporate-actions", "beginner"],
+    "description": "Why companies split their stock and what it means for investors."
+  },
+  {
+    "title": "ETFs: Instant Diversification Made Easy",
+    "difficulty": "beginner",
+    "tags": ["etfs", "diversification", "index-investing", "beginner"],
+    "description": "Exchange-traded funds and why they're great for beginners."
+  },
+  {
+    "title": "Index Funds: Set It and Forget It",
+    "difficulty": "beginner",
+    "tags": ["index-funds", "passive-investing", "beginner"],
+    "description": "How index funds track the market and why Warren Buffett loves them."
+  },
+  {
+    "title": "What is the S&P 500 and Why Should You Care?",
+    "difficulty": "beginner",
+    "tags": ["sp500", "index", "basics", "beginner"],
+    "description": "Understanding America's most watched stock market index."
+  },
+  {
+    "title": "Dow Jones: The Original Stock Index",
+    "difficulty": "beginner",
+    "tags": ["dow-jones", "index", "history", "beginner"],
+    "description": "The history and significance of the Dow Jones Industrial Average."
+  },
+  {
+    "title": "Nasdaq: Where Tech Giants Live",
+    "difficulty": "beginner",
+    "tags": ["nasdaq", "tech", "exchanges", "beginner"],
+    "description": "Why the Nasdaq is home to most technology companies."
+  },
+  {
+    "title": "From Lemonade Stand to Shareholder: Understanding Business Ownership",
+    "difficulty": "beginner",
+    "tags": ["business", "ownership", "fundamentals", "beginner"],
+    "description": "How owning stock means owning a piece of a business."
+  },
+  {
+    "title": "Blue Chip Stocks: The Safe Giants",
+    "difficulty": "beginner",
+    "tags": ["blue-chip", "large-cap", "safety", "beginner"],
+    "description": "What makes a blue chip stock and why they're considered safer."
+  },
+  {
+    "title": "Growth Stocks vs Value Stocks",
+    "difficulty": "beginner",
+    "tags": ["growth", "value", "stock-types", "beginner"],
+    "description": "The difference between companies growing fast vs those undervalued."
+  },
+  {
+    "title": "What is a Sector? Understanding Industry Groups",
+    "difficulty": "beginner",
+    "tags": ["sectors", "industries", "diversification", "beginner"],
+    "description": "How stocks are grouped by industry and why it matters."
+  },
+  {
+    "title": "The Rule of 72: Quick Mental Math for Investors",
+    "difficulty": "beginner",
+    "tags": ["rule-of-72", "math", "compound-interest", "beginner"],
+    "description": "A simple trick to calculate how long it takes to double your money."
+  },
+  {
+    "title": "Paper Trading: Practice Without Risk",
+    "difficulty": "beginner",
+    "tags": ["paper-trading", "practice", "simulation", "beginner"],
+    "description": "How to practice investing with fake money before using real cash."
+  },
+  {
+    "title": "Understanding Stock Charts for Beginners",
+    "difficulty": "beginner",
+    "tags": ["charts", "technical-analysis", "visualization", "beginner"],
+    "description": "Basic chart reading: candles, lines, and what they show."
+  },
+  {
+    "title": "Stock Screeners: Finding Your First Investment",
+    "difficulty": "beginner",
+    "tags": ["screeners", "tools", "research", "beginner"],
+    "description": "How to use stock screeners to find companies worth investigating."
+  },
+  {
+    "title": "What is a Broker and How to Choose One",
+    "difficulty": "beginner",
+    "tags": ["brokers", "platforms", "beginner"],
+    "description": "Different types of brokers and what to look for when opening an account."
+  },
+  {
+    "title": "Commission-Free Trading: The Robinhood Revolution",
+    "difficulty": "beginner",
+    "tags": ["brokers", "fees", "trading", "beginner"],
+    "description": "How zero-commission trading changed investing forever."
+  },
+  {
+    "title": "Stock Market Hours: When Can You Trade?",
+    "difficulty": "beginner",
+    "tags": ["trading-hours", "market-hours", "basics", "beginner"],
+    "description": "Understanding market hours, pre-market, and after-hours trading."
+  },
+  {
+    "title": "Market Orders vs Limit Orders",
+    "difficulty": "beginner",
+    "tags": ["order-types", "trading", "basics", "beginner"],
+    "description": "Different ways to buy and sell stocks and when to use each."
+  },
+  {
+    "title": "What is Volatility? Riding the Roller Coaster",
+    "difficulty": "beginner",
+    "tags": ["volatility", "risk", "market-behavior", "beginner"],
+    "description": "Why stock prices bounce around and how to handle the ups and downs."
+  },
+  {
+    "title": "The History of Wall Street: From Buttonwood to Bitcoin",
+    "difficulty": "beginner",
+    "tags": ["history", "wall-street", "education", "beginner"],
+    "description": "How stock trading evolved from 1792 to today."
+  },
+  {
+    "title": "Famous Market Crashes: Lessons from History",
+    "difficulty": "beginner",
+    "tags": ["history", "crashes", "lessons", "beginner"],
+    "description": "1929, 1987, 2008 - what went wrong and what we learned."
+  },
+  {
+    "title": "The Dot-Com Bubble: When Pets.com Went to Zero",
+    "difficulty": "beginner",
+    "tags": ["history", "bubbles", "tech", "beginner"],
+    "description": "Lessons from the internet boom and bust of the late 1990s."
+  },
+  {
+    "title": "Reading Financial News: Separating Signal from Noise",
+    "difficulty": "beginner",
+    "tags": ["news", "media-literacy", "research", "beginner"],
+    "description": "How to read financial news without getting overwhelmed."
+  },
+  {
+    "title": "Investing Myths Debunked",
+    "difficulty": "beginner",
+    "tags": ["myths", "psychology", "education", "beginner"],
+    "description": "Common misconceptions about investing that hold people back."
+  },
+  {
+    "title": "Why Timing the Market is Nearly Impossible",
+    "difficulty": "beginner",
+    "tags": ["market-timing", "psychology", "strategy", "beginner"],
+    "description": "The data shows why buying and holding beats trying to time the market."
+  },
+  {
+    "title": "Dollar-Cost Averaging: Smooth Out the Bumps",
+    "difficulty": "intermediate",
+    "tags": ["dca", "strategy", "risk-management", "intermediate"],
+    "description": "How investing regularly reduces the impact of market volatility."
+  },
+  {
+    "title": "Price-to-Earnings Ratio: The Most Popular Metric",
+    "difficulty": "intermediate",
+    "tags": ["pe-ratio", "valuation", "fundamentals", "intermediate"],
+    "description": "Understanding P/E and what it tells you about stock prices."
+  },
+  {
+    "title": "Warren Buffett's Story: From Paperboy to Billionaire",
+    "difficulty": "intermediate",
+    "tags": ["warren-buffett", "biography", "value-investing", "intermediate"],
+    "description": "How the Oracle of Omaha became the world's most successful investor."
+  },
+  {
+    "title": "Buffett's First Rules: Never Lose Money",
+    "difficulty": "intermediate",
+    "tags": ["warren-buffett", "rules", "risk-management", "intermediate"],
+    "description": "Buffett's two rules of investing and what they really mean."
+  },
+  {
+    "title": "The Buffett Screener: Finding Wonderful Companies",
+    "difficulty": "intermediate",
+    "tags": ["warren-buffett", "screeners", "value-investing", "intermediate"],
+    "description": "How to find companies that meet Buffett's investment criteria."
+  },
+  {
+    "title": "ROE: Return on Equity Explained",
+    "difficulty": "intermediate",
+    "tags": ["roe", "fundamentals", "metrics", "intermediate"],
+    "description": "Why Buffett loves companies with consistent high ROE."
+  },
+  {
+    "title": "Free Cash Flow: The Money That Matters",
+    "difficulty": "intermediate",
+    "tags": ["fcf", "cash-flow", "fundamentals", "intermediate"],
+    "description": "Why free cash flow is better than earnings for analyzing companies."
+  },
+  {
+    "title": "Debt-to-Equity: Measuring Financial Health",
+    "difficulty": "intermediate",
+    "tags": ["debt", "balance-sheet", "fundamentals", "intermediate"],
+    "description": "How much debt is too much? Understanding leverage."
+  },
+  {
+    "title": "Benjamin Graham: The Father of Value Investing",
+    "difficulty": "intermediate",
+    "tags": ["benjamin-graham", "value-investing", "history", "intermediate"],
+    "description": "Meet Warren Buffett's teacher and author of The Intelligent Investor."
+  },
+  {
+    "title": "Mr. Market: Graham's Famous Parable",
+    "difficulty": "intermediate",
+    "tags": ["benjamin-graham", "psychology", "market-behavior", "intermediate"],
+    "description": "Understanding market irrationality through Graham's story."
+  },
+  {
+    "title": "Margin of Safety: The Concept That Protects Investors",
+    "difficulty": "intermediate",
+    "tags": ["margin-of-safety", "benjamin-graham", "risk-management", "intermediate"],
+    "description": "Why buying stocks at a discount reduces your risk."
+  },
+  {
+    "title": "The Graham Screener: Finding Bargain Stocks",
+    "difficulty": "intermediate",
+    "tags": ["benjamin-graham", "screeners", "value-investing", "intermediate"],
+    "description": "How to find stocks trading below their intrinsic value."
+  },
+  {
+    "title": "Price-to-Book Ratio: Asset-Based Valuation",
+    "difficulty": "intermediate",
+    "tags": ["pb-ratio", "valuation", "benjamin-graham", "intermediate"],
+    "description": "When stocks trade below their book value, opportunity knocks."
+  },
+  {
+    "title": "Peter Lynch: Invest in What You Know",
+    "difficulty": "intermediate",
+    "tags": ["peter-lynch", "growth-investing", "biography", "intermediate"],
+    "description": "How Fidelity's legendary manager turned $18M into $14B."
+  },
+  {
+    "title": "Tenbaggers: Lynch's Path to Huge Returns",
+    "difficulty": "intermediate",
+    "tags": ["peter-lynch", "growth", "multibaggers", "intermediate"],
+    "description": "Finding stocks that multiply your investment tenfold or more."
+  },
+  {
+    "title": "The Lynch Screener: Growth at a Reasonable Price",
+    "difficulty": "intermediate",
+    "tags": ["peter-lynch", "screeners", "growth-investing", "intermediate"],
+    "description": "Finding fast-growing companies that aren't overpriced."
+  },
+  {
+    "title": "PEG Ratio: Growth Adjusted Valuation",
+    "difficulty": "intermediate",
+    "tags": ["peg-ratio", "peter-lynch", "valuation", "intermediate"],
+    "description": "Peter Lynch's favorite metric for comparing growth stocks."
+  },
+  {
+    "title": "Earnings Growth: The Engine of Stock Prices",
+    "difficulty": "intermediate",
+    "tags": ["earnings", "growth", "fundamentals", "intermediate"],
+    "description": "Why consistent earnings growth drives long-term stock performance."
+  },
+  {
+    "title": "Carl Icahn: The Activist Investor",
+    "difficulty": "intermediate",
+    "tags": ["carl-icahn", "activist", "biography", "intermediate"],
+    "description": "How one investor forces companies to unlock value."
+  },
+  {
+    "title": "The Icahn Screener: Finding Value in Disruption",
+    "difficulty": "intermediate",
+    "tags": ["carl-icahn", "screeners", "activist", "intermediate"],
+    "description": "Identifying undervalued companies ripe for change."
+  },
+  {
+    "title": "Asset Plays: When Cash is King",
+    "difficulty": "intermediate",
+    "tags": ["assets", "valuation", "balance-sheet", "intermediate"],
+    "description": "Finding companies worth more dead than alive - in a good way."
+  },
+  {
+    "title": "Reading the Balance Sheet: Assets, Liabilities, Equity",
+    "difficulty": "intermediate",
+    "tags": ["balance-sheet", "financial-statements", "fundamentals", "intermediate"],
+    "description": "The basics of understanding what a company owns and owes."
+  },
+  {
+    "title": "Income Statement: Revenue, Expenses, Profits",
+    "difficulty": "intermediate",
+    "tags": ["income-statement", "financial-statements", "fundamentals", "intermediate"],
+    "description": "How to read the story of a company's profitability."
+  },
+  {
+    "title": "Cash Flow Statement: Following the Money",
+    "difficulty": "intermediate",
+    "tags": ["cash-flow-statement", "financial-statements", "fundamentals", "intermediate"],
+    "description": "Why cash flow is the ultimate truth in business."
+  },
+  {
+    "title": "Annual Reports: The CEO's Letter to Shareholders",
+    "difficulty": "intermediate",
+    "tags": ["annual-reports", "research", "fundamentals", "intermediate"],
+    "description": "How to read and learn from annual reports like Buffett does."
+  },
+  {
+    "title": "10-K Filings: The Investor's Goldmine",
+    "difficulty": "intermediate",
+    "tags": ["sec-filings", "10-k", "research", "intermediate"],
+    "description": "Where to find detailed company information the pros use."
+  },
+  {
+    "title": "Insider Trading: Legal vs Illegal",
+    "difficulty": "intermediate",
+    "tags": ["insider-trading", "regulations", "ethics", "intermediate"],
+    "description": "Understanding what insiders can and cannot do with company stock."
+  },
+  {
+    "title": "SEC Filings: The Transparency That Protects Investors",
+    "difficulty": "intermediate",
+    "tags": ["sec", "regulations", "transparency", "intermediate"],
+    "description": "How securities laws keep markets fair for everyone."
+  },
+  {
+    "title": "Options Basics: Calls and Puts for Beginners",
+    "difficulty": "advanced",
+    "tags": ["options", "derivatives", "advanced", "advanced"],
+    "description": "Introduction to stock options and how they work."
+  },
+  {
+    "title": "Short Selling: Profiting from Falling Prices",
+    "difficulty": "advanced",
+    "tags": ["short-selling", "strategy", "risk", "advanced"],
+    "description": "How investors bet against stocks and the risks involved."
+  },
+  {
+    "title": "Technical Analysis: Reading the Charts",
+    "difficulty": "advanced",
+    "tags": ["technical-analysis", "charts", "trading", "advanced"],
+    "description": "Moving averages, support/resistance, and pattern recognition."
+  },
+  {
+    "title": "Fundamental Analysis: Finding Intrinsic Value",
+    "difficulty": "advanced",
+    "tags": ["fundamental-analysis", "valuation", "research", "advanced"],
+    "description": "The Buffett/Graham method of determining true company value."
+  },
+  {
+    "title": "Discounted Cash Flow: Valuing the Future",
+    "difficulty": "advanced",
+    "tags": ["dcf", "valuation", "fundamentals", "advanced"],
+    "description": "How to calculate what a company is worth in today's dollars."
+  },
+  {
+    "title": "Beta: Measuring Market Sensitivity",
+    "difficulty": "advanced",
+    "tags": ["beta", "risk", "metrics", "advanced"],
+    "description": "Understanding how much a stock moves relative to the market."
+  },
+  {
+    "title": "Alpha: Generating Excess Returns",
+    "difficulty": "advanced",
+    "tags": ["alpha", "performance", "strategy", "advanced"],
+    "description": "What it means to beat the market and how to measure it."
+  },
+  {
+    "title": "Sharpe Ratio: Risk-Adjusted Returns",
+    "difficulty": "advanced",
+    "tags": ["sharpe-ratio", "risk", "metrics", "advanced"],
+    "description": "Comparing returns while accounting for risk taken."
+  },
+  {
+    "title": "Buffett's Portfolio: Lessons from Current Holdings",
+    "difficulty": "advanced",
+    "tags": ["warren-buffett", "portfolio", "case-study", "advanced"],
+    "description": "Analyzing Berkshire Hathaway's current investments."
+  },
+  {
+    "title": "Graham's Net-Net Strategy: Extreme Value",
+    "difficulty": "advanced",
+    "tags": ["benjamin-graham", "net-net", "deep-value", "advanced"],
+    "description": "The conservative strategy Graham used in the 1950s."
+  },
+  {
+    "title": "Moats: Buffett's Competitive Advantage Concept",
+    "difficulty": "advanced",
+    "tags": ["moat", "competitive-advantage", "warren-buffett", "advanced"],
+    "description": "Why great businesses have durable competitive advantages."
+  },
+  {
+    "title": "Circle of Competence: Stay in Your Lane",
+    "difficulty": "advanced",
+    "tags": ["competence", "warren-buffett", "strategy", "advanced"],
+    "description": "Why Buffett avoids businesses he doesn't understand."
+  },
+  {
+    "title": "Fear and Greed: Mastering Market Psychology",
+    "difficulty": "advanced",
+    "tags": ["psychology", "behavioral-finance", "emotions", "advanced"],
+    "description": "How emotions drive markets and how to stay rational."
+  },
+  {
+    "title": "FOMO in Investing: Fear of Missing Out",
+    "difficulty": "advanced",
+    "tags": ["fomo", "psychology", "behavioral-finance", "advanced"],
+    "description": "Why chasing hot stocks often leads to losses."
+  },
+  {
+    "title": "Loss Aversion: Why Losses Feel Worse Than Gains",
+    "difficulty": "advanced",
+    "tags": ["loss-aversion", "psychology", "behavioral-finance", "advanced"],
+    "description": "Understanding the psychological bias that hurts investors."
+  },
+  {
+    "title": "Confirmation Bias: Seeking What We Want to See",
+    "difficulty": "advanced",
+    "tags": ["confirmation-bias", "psychology", "behavioral-finance", "advanced"],
+    "description": "How to avoid only seeing evidence that supports your views."
+  },
+  {
+    "title": "Cryptocurrency vs Stocks: Key Differences",
+    "difficulty": "advanced",
+    "tags": ["crypto", "comparison", "risk", "advanced"],
+    "description": "Why crypto is different from traditional stock investing."
+  },
+  {
+    "title": "ESG Investing: Profits with Purpose",
+    "difficulty": "advanced",
+    "tags": ["esg", "sustainability", "ethical-investing", "advanced"],
+    "description": "Environmental, social, and governance factors in investing."
+  },
+  {
+    "title": "International Investing: Beyond US Markets",
+    "difficulty": "advanced",
+    "tags": ["international", "diversification", "global", "advanced"],
+    "description": "Why smart investors look at stocks worldwide."
+  },
+  {
+    "title": "REITs: Real Estate Without the Hassle",
+    "difficulty": "advanced",
+    "tags": ["reits", "real-estate", "income", "advanced"],
+    "description": "Real estate investment trusts explained."
+  },
+  {
+    "title": "Bonds: The Other Side of the Portfolio",
+    "difficulty": "advanced",
+    "tags": ["bonds", "fixed-income", "diversification", "advanced"],
+    "description": "How bonds work and why they balance stock risk."
+  },
+  {
+    "title": "Asset Allocation: Balancing Stocks and Bonds",
+    "difficulty": "advanced",
+    "tags": ["asset-allocation", "portfolio", "strategy", "advanced"],
+    "description": "How to divide your money across different investments."
+  },
+  {
+    "title": "Rebalancing: Keeping Your Portfolio on Track",
+    "difficulty": "advanced",
+    "tags": ["rebalancing", "portfolio", "strategy", "advanced"],
+    "description": "When and why to adjust your investment mix."
+  },
+  {
+    "title": "Tax-Efficient Investing: Keeping More of Your Gains",
+    "difficulty": "advanced",
+    "tags": ["taxes", "efficiency", "strategy", "advanced"],
+    "description": "Strategies to minimize taxes on investment returns."
+  },
+  {
+    "title": "Roth vs Traditional IRA: Retirement Investing",
+    "difficulty": "advanced",
+    "tags": ["retirement", "ira", "taxes", "advanced"],
+    "description": "Tax-advantaged accounts and why teens should start early."
+  },
+  {
+    "title": "The 4% Rule: Safe Retirement Withdrawals",
+    "difficulty": "advanced",
+    "tags": ["retirement", "withdrawals", "strategy", "advanced"],
+    "description": "How much you can safely spend from investments in retirement."
+  },
+  {
+    "title": "Dividend Aristocrats: 25+ Years of Rising Payments",
+    "difficulty": "advanced",
+    "tags": ["dividends", "aristocrats", "income", "advanced"],
+    "description": "Companies that have increased dividends for decades."
+  },
+  {
+    "title": "DRIPs: Automatically Reinvesting Dividends",
+    "difficulty": "advanced",
+    "tags": ["drips", "dividends", "compound-interest", "advanced"],
+    "description": "How dividend reinvestment plans accelerate wealth building."
+  }
+]

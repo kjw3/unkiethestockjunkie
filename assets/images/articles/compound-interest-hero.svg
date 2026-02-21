@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="barGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="150" fill="white" opacity="0.05"/>
+  <circle cx="700" cy="350" r="200" fill="white" opacity="0.05"/>
+  <circle cx="400" cy="225" r="100" fill="white" opacity="0.03"/>
+  
+  <!-- Title area -->
+  <text x="400" y="80" 
+        font-family="Arial, sans-serif" 
+        font-size="48" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle">Compound Interest</text>
+  
+  <text x="400" y="130" 
+        font-family="Arial, sans-serif" 
+        font-size="24" 
+        fill="rgba(255,255,255,0.9)" 
+        text-anchor="middle">The Eighth Wonder of the World</text>
+  
+  <!-- Growing bars representing compound growth -->
+  <!-- Year 1 -->
+  <rect x="100" y="380" width="60" height="20" fill="url(#barGradient)" rx="4"/>
+  <text x="130" y="420" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Year 1</text>
+  
+  <!-- Year 5 -->
+  <rect x="200" y="350" width="60" height="50" fill="url(#barGradient)" rx="4"/>
+  <text x="230" y="420" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Year 5</text>
+  
+  <!-- Year 10 -->
+  <rect x="300" y="290" width="60" height="110" fill="url(#barGradient)" rx="4"/>
+  <text x="330" y="420" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Year 10</text>
+  
+  <!-- Year 20 -->
+  <rect x="400" y="200" width="60" height="200" fill="url(#barGradient)" rx="4"/>
+  <text x="430" y="420" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Year 20</text>
+  
+  <!-- Year 30 -->
+  <rect x="500" y="120" width="60" height="280" fill="url(#barGradient)" rx="4"/>
+  <text x="530" y="420" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Year 30</text>
+  
+  <!-- Year 40 -->
+  <rect x="600" y="50" width="60" height="350" fill="url(#barGradient)" rx="4"/>
+  <text x="630" y="420" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Year 40</text>
+  
+  <!-- Growth arrow -->
+  <path d="M 150,360 L 650,100" 
+        fill="none" 
+        stroke="#fbbf24" 
+        stroke-width="4" 
+        stroke-dasharray="10,5"/>
+  <polygon points="650,100 640,115 660,115" fill="#fbbf24"/>
+  
+  <!-- Dollar signs floating -->
+  <text x="750" y="80" font-family="Arial" font-size="40" fill="rgba(255,255,255,0.3)">$</text>
+  <text x="50" y="180" font-family="Arial" font-size="30" fill="rgba(255,255,255,0.3)">$</text>
+  <text x="750" y="300" font-family="Arial" font-size="35" fill="rgba(255,255,255,0.3)">$</text>
+</svg>
