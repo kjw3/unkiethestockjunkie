@@ -379,17 +379,9 @@ image_credit_url: "https://build.nvidia.com/black-forest-labs/flux_1-schnell"
 `;
   }
 
-  // Find related articles (simplified)
-  markdown += `related_articles:
-  - title: "Compound Interest: The Eighth Wonder of the World"
-    url: "/articles/compound-interest-the-eighth-wonder-of-the-world"
-    description: "Why starting early gives you a massive advantage in investing."
-  - title: "What is a Stock? A Teen's First Guide"
-    url: "/articles/what-is-a-stock-a-teens-first-guide"
-    description: "Learn what stocks are, how they work, and why companies sell them."
----
+  ---
 
-`;
+  `;
 
   // Build content
   markdown += content;
