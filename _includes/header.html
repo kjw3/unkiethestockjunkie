@@ -15,7 +15,6 @@
           <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
           <li><a href="{{ '/articles' | relative_url }}" {% if page.url contains '/articles' %}class="active"{% endif %}>Articles</a></li>
           <li><a href="{{ '/screeners' | relative_url }}" {% if page.url contains '/screeners' %}class="active"{% endif %}>Screeners</a></li>
-          <li><a href="{{ '/guides' | relative_url }}" {% if page.url contains '/guides' %}class="active"{% endif %}>Guides</a></li>
           <li><a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a></li>
         </ul>
         
@@ -23,7 +22,6 @@
           <button class="theme-toggle" aria-label="Toggle dark mode">
             <span class="theme-icon">🌙</span>
           </button>
-          <a href="/articles" class="btn btn-small btn-primary">Browse Articles</a>
         </div>
       </nav>
     </div>
