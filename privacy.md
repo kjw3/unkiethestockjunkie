@@ -63,9 +63,7 @@ permalink: /privacy/
           <h3>Google Analytics (Optional)</h3>
           <p>If enabled, we use Google Analytics to understand site usage. This collects anonymous data only. You can opt-out using browser extensions.</p>
           
-          <h3>Formspree (Contact Form)</h3>
-          <p>Our contact form uses Formspree. They process form submissions to deliver messages to us. See <a href="https://formspree.io/legal/privacy-policy" target="_blank">Formspree's Privacy Policy</a>.</p>
-        </div>
+          </div>
         
         <div class="privacy-section">
           <h2>Cookies</h2>

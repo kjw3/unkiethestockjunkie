@@ -19,53 +19,14 @@ permalink: /contact/
         <h2>Send a Message</h2>
         <p>Fill out the form below and I'll get back to you as soon as possible.</p>
         
-        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required placeholder="What should I call you?">
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com">
-            <small>I'll only use this to reply to you. No spam, ever.</small>
-          </div>
-          
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <select id="subject" name="subject" required>
-              <option value="">Select a topic...</option>
-              <option value="question">General Question</option>
-              <option value="suggestion">Content Suggestion</option>
-              <option value="bug">Bug Report</option>
-              <option value="feature">Feature Request</option>
-              <option value="partnership">Partnership</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="6" required placeholder="What's on your mind? Ask anything about investing, the site, or just say hello!"></textarea>
-          </div>
-          
-          <div class="form-group">
-            <label class="checkbox-label">
-              <input type="checkbox" name="parent" value="yes">
-              <span>I'm a parent/guardian</span>
-            </label>
-          </div>
-          
-          <button type="submit" class="btn btn-primary btn-large">Send Message</button>
-        </form>
-        
-        <div class="form-note">
-          <p><strong>📝 Note:</strong> This form connects to Formspree. To make it work, you'll need to:</p>
-          <ol>
-            <li>Create a free account at <a href="https://formspree.io" target="_blank">formspree.io</a></li>
-            <li>Create a new form and copy the form ID</li>
-            <li>Replace <code>YOUR_FORM_ID</code> in the form action above with your actual form ID</li>
-          </ol>
+        <div class="coming-soon-box">
+          <h3>🚧 Contact Form Coming Soon</h3>
+          <p>We're setting up our contact system. For now, you can reach us via:</p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+            <li>Email: <a href="mailto:hello@unkiethestockjunkie.com">hello@unkiethestockjunkie.com</a></li>
+            <li>GitHub: <a href="https://github.com/kjw3/unkiethestockjunkie" target="_blank">github.com/kjw3/unkiethestockjunkie</a></li>
+          </ul>
+          <p>We typically respond within 2-3 business days.</p>
         </div>
       </div>
       

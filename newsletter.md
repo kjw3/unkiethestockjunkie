@@ -55,13 +55,11 @@ permalink: /newsletter/
             </div>
           </div>
           
-          <form class="newsletter-form-large" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div class="form-row">
-              <input type="email" name="email" placeholder="Enter your email address" required class="email-input">
-              <button type="submit" class="btn btn-primary btn-large">Subscribe</button>
-            </div>
-            <p class="form-disclaimer">Unsubscribe anytime. We respect your privacy. <a href="/privacy">Privacy Policy</a></p>
-          </form>
+          <div class="coming-soon-box">
+            <h3>🚧 Coming Soon</h3>
+            <p>We're setting up our email system. Check back soon to subscribe!</p>
+            <p class="form-disclaimer">In the meantime, bookmark this page and visit daily for new articles.</p>
+          </div>
           
           <div class="trust-badges">
             <div class="trust-item">
