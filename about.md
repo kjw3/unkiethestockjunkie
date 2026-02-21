@@ -34,9 +34,7 @@ permalink: /about/
         <h3>The AI Factor</h3>
         <p>Yes, this site uses AI to generate content. But don't worry - every article is focused on time-tested investing principles that have worked for decades. The AI helps me write faster and explain things in multiple ways, but the wisdom comes from legendary investors who've proven their strategies work.</p>
         
-        <p>Built with <a href="https://github.com/kjw3/forexample.ai" target="_blank">forexample.ai</a> technology and powered by <a href="https://build.nvidia.com/" target="_blank">NVIDIA's free AI APIs</a>.</p>
-        
-        <h3>Who This Is For</h3>
+<h3>Who This Is For</h3>
         <ul>
           <li>Teenagers (13-18) who want to learn about investing</li>
           <li>Parents who want to teach their kids about money</li>
@@ -95,18 +93,9 @@ permalink: /about/
           </ul>
         </div>
         
-        <div class="sidebar-card">
-          <h3>🛠️ Built With</h3>
-          <ul>
-            <li><a href="https://jekyllrb.com/" target="_blank">Jekyll</a></li>
-            <li><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></li>
-            <li><a href="https://build.nvidia.com/" target="_blank">NVIDIA AI</a></li>
-            <li><a href="https://github.com/kjw3/forexample.ai" target="_blank">forexample.ai</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </section>
 
 <style>
@@ -163,8 +152,9 @@ permalink: /about/
 }
 
 .disclaimer-box {
-  background: #fef3c7;
-  border-left: 4px solid #f59e0b;
+  background: var(--color-warning-bg);
+  border-left: 4px solid var(--color-warning-border);
+  color: var(--color-warning-text);
   border-radius: var(--border-radius);
   padding: var(--spacing-lg);
   margin: var(--spacing-xl) 0;
@@ -172,10 +162,15 @@ permalink: /about/
 
 .disclaimer-box p {
   margin-bottom: var(--spacing-md);
+  color: var(--color-warning-text);
 }
 
 .disclaimer-box p:last-child {
   margin-bottom: 0;
+}
+
+.disclaimer-box strong {
+  color: var(--color-warning-text);
 }
 
 .cta-section {
