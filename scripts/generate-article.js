@@ -92,11 +92,6 @@ function selectUnusedTopic(topics, generated) {
   const randomIndex = Math.floor(Math.random() * unused.length);
   return { topic: unused[randomIndex], reset: false };
 }
-  
-  // Random selection
-  const randomIndex = Math.floor(Math.random() * unused.length);
-  return { topic: unused[randomIndex], reset: false };
-}
 
 // Utility: Generate image using NVIDIA FLUX.1-schnell
 async function generateImage(topic) {
