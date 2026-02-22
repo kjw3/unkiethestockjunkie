@@ -374,9 +374,9 @@ image_credit_url: "https://build.nvidia.com/black-forest-labs/flux_1-schnell"
 `;
   }
 
-  ---
+  markdown += `---
 
-  `;
+`;
 
   // Build content
   markdown += content;
