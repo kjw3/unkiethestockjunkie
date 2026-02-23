@@ -16,41 +16,27 @@ permalink: /articles/
   <div class="container">
     <div class="articles-grid">
       
-      <div class="articles-sidebar">
-        <div class="filters-card">
-          <h3>Filter Articles</h3>
-          
-          <div class="filter-group">
-            <label>Difficulty Level</label>
-            <select id="difficulty" onchange="filterArticles()">
-              <option value="all">All Levels</option>
-              <option value="beginner">Beginner (Ages 13-15)</option>
-              <option value="intermediate">Intermediate (Ages 16-18)</option>
-              <option value="advanced">Advanced</option>
-            </select>
-          </div>
-          
-          <div class="filter-group">
-            <label>Topic</label>
-            <select id="topic" onchange="filterArticles()">
-              <option value="all">All Topics</option>
-              <option value="basics">Investing Basics</option>
-              <option value="strategies">Legendary Strategies</option>
-              <option value="market">Market Concepts</option>
-              <option value="analysis">Analysis & Metrics</option>
-            </select>
-          </div>
-          
-          <div class="results-info">
-            <p id="results-count">Showing all articles</p>
-          </div>
-        </div>
-        
-        <div class="daily-update-card">
-          <h3>🔄 Daily Updates</h3>
-          <p>New articles are automatically generated every day at 10:17 AM UTC. Check back tomorrow for fresh content!</p>
-        </div>
-      </div>
+<div class="articles-sidebar">
+<div class="filters-card">
+<h3>Filter Articles</h3>
+
+<div class="filter-buttons">
+ <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All Articles</button>
+ <button class="filter-btn" data-filter="beginner" onclick="filterArticles('beginner')">Beginner</button>
+ <button class="filter-btn" data-filter="intermediate" onclick="filterArticles('intermediate')">Intermediate</button>
+ <button class="filter-btn" data-filter="advanced" onclick="filterArticles('advanced')">Advanced</button>
+</div>
+
+<div class="results-info">
+<p id="results-count">Showing all articles</p>
+</div>
+</div>
+
+<div class="daily-update-card">
+<h3>🔄 Daily Updates</h3>
+<p>New articles are automatically generated every day at 10:17 AM UTC. Check back tomorrow for fresh content!</p>
+</div>
+</div>
       
       <div class="articles-list" id="articles-list">
         {% for article in site.articles reversed %}
@@ -126,26 +112,39 @@ permalink: /articles/
   font-size: 1.25rem;
 }
 
-.filter-group {
-  margin-bottom: var(--spacing-md);
+.filter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
-.filter-group label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-xs);
-}
-
-.filter-group select {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid var(--border-color);
+.filter-btn {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   background: var(--bg-primary);
-  color: var(--text-primary);
+  color: var(--text-secondary);
   font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--text-on-primary);
+}
+
+.filter-btn.active:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .results-info {
@@ -238,16 +237,39 @@ permalink: /articles/
 </style>
 
 <script>
-// Simple client-side filtering (can be enhanced)
-function filterArticles() {
-  const difficulty = document.getElementById('difficulty').value;
-  const topic = document.getElementById('topic').value;
+// Client-side filtering by difficulty level
+function filterArticles(filter) {
   const resultsCount = document.getElementById('results-count');
+  const buttons = document.querySelectorAll('.filter-btn');
+  const articles = document.querySelectorAll('.article-card');
   
-  // Note: This is a placeholder. In a real implementation, 
-  // you'd filter the articles client-side or reload the page with query params
-  resultsCount.textContent = 'Filters applied - reload page to see filtered results';
+  // Update active button
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.filter === filter) {
+      btn.classList.add('active');
+    }
+  });
   
-  // Could add active filtering with JavaScript if articles were rendered with data attributes
+  // Filter articles
+  let visibleCount = 0;
+  articles.forEach(article => {
+    const articleDifficulty = article.dataset.difficulty;
+    
+    if (filter === 'all' || articleDifficulty === filter) {
+      article.style.display = '';
+      visibleCount++;
+    } else {
+      article.style.display = 'none';
+    }
+  });
+  
+  // Update results count
+  if (filter === 'all') {
+    resultsCount.textContent = `Showing all ${visibleCount} articles`;
+  } else {
+    const filterLabel = filter.charAt(0).toUpperCase() + filter.slice(1);
+    resultsCount.textContent = `Showing ${visibleCount} ${filterLabel} articles`;
+  }
 }
 </script>
