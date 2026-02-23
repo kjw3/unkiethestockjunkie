@@ -281,8 +281,6 @@ permalink: /disclaimer/
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-lg);
-  position: sticky;
-  top: 6rem;
 }
 
 .sidebar-card.warning {
