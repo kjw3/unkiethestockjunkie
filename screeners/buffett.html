@@ -839,8 +839,9 @@ permalink: /screeners/buffett/
 </style>
 
 <script>
-// Yahoo Finance API endpoint (using a CORS proxy for GitHub Pages)
-const API_BASE = 'https://query1.finance.yahoo.com/v8/finance/chart/';
+// Yahoo Finance API endpoint (using CORS proxy for GitHub Pages)
+const API_BASE = 'https://api.allorigins.win/raw?url=';
+const YAHOO_API = 'https://query1.finance.yahoo.com/v8/finance/chart/';
 
 async function analyzeStock() {
   const tickerInput = document.getElementById('ticker-input');
@@ -857,8 +858,9 @@ async function analyzeStock() {
   hideError();
   
   try {
-    // Fetch stock data from Yahoo Finance
-    const response = await fetch(`${API_BASE}${ticker}?interval=1d&range=1y`);
+    // Fetch stock data from Yahoo Finance via CORS proxy
+    const encodedUrl = encodeURIComponent(`${YAHOO_API}${ticker}?interval=1d&range=1y`);
+    const response = await fetch(`${API_BASE}${encodedUrl}`);
     
     if (!response.ok) {
       throw new Error('Stock not found or API error');
