@@ -138,7 +138,7 @@ permalink: /screeners/buffett/
 </div>
 
 <div class="result-disclaimer">
-<p><strong>Note:</strong> Data is for educational purposes only. Metrics are based on available financial data and may not reflect real-time values. Always verify with official sources before making investment decisions.</p>
+<p><strong>Demo Mode:</strong> This is an educational demonstration that generates realistic sample data. Results are based on the ticker symbol but do not reflect actual real-time financial metrics. In a production environment, this would connect to financial APIs like Alpha Vantage or Yahoo Finance. Always verify with official sources before making investment decisions.</p>
 </div>
 </div>
 </div>
@@ -839,10 +839,8 @@ permalink: /screeners/buffett/
 </style>
 
 <script>
-// Yahoo Finance API endpoint (using CORS proxy for GitHub Pages)
-const API_BASE = 'https://api.allorigins.win/raw?url=';
-const YAHOO_API = 'https://query1.finance.yahoo.com/v8/finance/chart/';
-
+// Demo mode: Generate realistic metrics based on ticker hash
+// This ensures the same ticker always shows the same "random" results
 async function analyzeStock() {
   const tickerInput = document.getElementById('ticker-input');
   const ticker = tickerInput.value.trim().toUpperCase();
@@ -857,54 +855,59 @@ async function analyzeStock() {
   showLoading(true);
   hideError();
   
-  try {
-    // Fetch stock data from Yahoo Finance via CORS proxy
-    const encodedUrl = encodeURIComponent(`${YAHOO_API}${ticker}?interval=1d&range=1y`);
-    const response = await fetch(`${API_BASE}${encodedUrl}`);
-    
-    if (!response.ok) {
-      throw new Error('Stock not found or API error');
-    }
-    
-    const data = await response.json();
-    
-    if (!data.chart || !data.chart.result || data.chart.result.length === 0) {
-      throw new Error('No data available for this ticker');
-    }
-    
-    const result = data.chart.result[0];
-    const meta = result.meta;
-    const quotes = result.indicators?.quote?.[0] || {};
-    
-    // Extract metrics (using available data)
-    const currentPrice = meta.regularMarketPrice || 0;
-    const previousClose = meta.previousClose || 0;
-    const fiftyTwoWeekHigh = meta.fiftyTwoWeekHigh || 0;
-    const fiftyTwoWeekLow = meta.fiftyTwoWeekLow || 0;
-    
-    // Calculate mock metrics based on available data
-    // Note: Yahoo Finance basic API doesn't provide all fundamental metrics
-    // In production, you'd want to use a more comprehensive API
-    const mockROE = Math.max(5, Math.min(35, (currentPrice / previousClose - 1) * 100 + 15));
-    const mockDebt = Math.max(0.1, Math.min(2.0, (fiftyTwoWeekHigh - currentPrice) / currentPrice));
-    const mockFCF = currentPrice * 0.1 * (Math.random() * 0.5 + 0.5);
-    const mockMargin = Math.max(5, Math.min(30, (currentPrice / fiftyTwoWeekLow - 1) * 10));
-    
-    // Display results
-    displayResults(ticker, meta.shortName || ticker, {
-      roe: mockROE,
-      debt: mockDebt,
-      fcf: mockFCF,
-      margin: mockMargin
-    });
-    
-    showLoading(false);
-    
-  } catch (error) {
-    showLoading(false);
-    showError(error.message || 'Failed to fetch stock data. Please try again.');
-    console.error('Analysis error:', error);
-  }
+  // Simulate API delay for realism
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  // Generate realistic demo metrics based on ticker
+  // Using a hash function so the same ticker always gives the same results
+  const hash = ticker.split('').reduce((a, b) => {
+    a = ((a << 5) - a) + b.charCodeAt(0);
+    return a & a;
+  }, 0);
+  
+  const seededRandom = (min, max) => {
+    const x = Math.sin(hash + min) * 10000;
+    return min + (x - Math.floor(x)) * (max - min);
+  };
+  
+  // Company names mapping for common tickers
+  const companyNames = {
+    'AAPL': 'Apple Inc.',
+    'MSFT': 'Microsoft Corporation',
+    'GOOGL': 'Alphabet Inc.',
+    'AMZN': 'Amazon.com Inc.',
+    'TSLA': 'Tesla Inc.',
+    'META': 'Meta Platforms Inc.',
+    'NVDA': 'NVIDIA Corporation',
+    'JPM': 'JPMorgan Chase & Co.',
+    'V': 'Visa Inc.',
+    'JNJ': 'Johnson & Johnson',
+    'WMT': 'Walmart Inc.',
+    'PG': 'Procter & Gamble',
+    'KO': 'Coca-Cola',
+    'DIS': 'Walt Disney',
+    'NFLX': 'Netflix Inc.',
+    'GME': 'GameStop Corp.',
+    'AMC': 'AMC Entertainment'
+  };
+  
+  const companyName = companyNames[ticker] || `${ticker} Corp.`;
+  
+  // Generate realistic metrics
+  const roe = seededRandom(5, 40);
+  const debt = seededRandom(0.1, 3.0);
+  const fcf = seededRandom(1000000000, 50000000000); // $1B to $50B
+  const margin = seededRandom(3, 35);
+  
+  // Display results
+  displayResults(ticker, companyName, {
+    roe: roe,
+    debt: debt,
+    fcf: fcf,
+    margin: margin
+  });
+  
+  showLoading(false);
 }
 
 function displayResults(ticker, companyName, metrics) {
