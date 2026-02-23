@@ -5,7 +5,7 @@ description: "Benjamin Graham's value investing criteria. Find stocks trading be
 permalink: /screeners/graham/
 ---
 
-<section class="page-header screener-header graham-header">
+<section class="page-header screener-header">
   <div class="container">
     <div class="screener-title">
       <div class="screener-emoji">📖</div>
@@ -39,7 +39,7 @@ permalink: /screeners/graham/
       </div>
       
       <div class="info-sidebar">
-        <div class="criteria-card graham-card">
+        <div class="criteria-card">
           <h3>Screener Criteria</h3>
           <div class="criterion">
             <div class="criterion-name">P/E Ratio</div>
@@ -202,36 +202,281 @@ permalink: /screeners/graham/
             <td class="metric good">6.7%</td>
             <td class="metric good">2.1</td>
             <td><span class="margin-badge moderate">Moderate</span></td>
-          </tr>
-        </tbody>
-      </table>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="table-legend">
+    <div class="legend-item">
+      <span class="legend-dot good"></span>
+      <span>Meets Criteria</span>
     </div>
-    
-    <div class="screener-actions">
+    <div class="legend-item">
+      <span class="legend-dot warn"></span>
+      <span>Below Threshold</span>
+    </div>
+    <div class="legend-item">
+      <span class="margin-badge high">High</span>
+      <span>Strong margin of safety</span>
+    </div>
+  </div>
+</div>
+
+<div class="screener-actions">
       <a href="/screeners" class="btn btn-secondary">← Back to Screeners</a>
       <a href="/articles" class="btn btn-primary">Learn More About Graham</a>
     </div>
   </div>
 </section>
 
+<section class="learn-more">
+  <div class="container">
+    <h2>Deep Dive: Understanding Graham's Criteria</h2>
+
+    <div class="criteria-explanations">
+      <div class="explanation-card">
+        <h3>📈 Mr. Market</h3>
+        <p>Graham's famous "Mr. Market" parable illustrates how the market is irrational - treat it as a manic-depressive business partner:</p>
+        <ul>
+          <li><strong>Emotional Swings:</strong> Market prices swing wildly based on fear and greed</li>
+          <li><strong>Exploit the Mood:</strong> Buy when he's depressed (low prices), sell when he's euphoric</li>
+          <li><strong>Price vs Value:</strong> Focus on intrinsic value, not market sentiment</li>
+          <li><strong>Opportunity Knocks:</strong> Market volatility creates buying opportunities</li>
+          <li><strong>Long-term Focus:</strong> Eventually, value is recognized by the market</li>
+        </ul>
+      </div>
+
+      <div class="explanation-card">
+        <h3>🛡️ Margin of Safety</h3>
+        <p>Only buy when price is significantly below intrinsic value - this is the cornerstone of defensive investing:</p>
+        <ul>
+          <li><strong>Buffer Zone:</strong> Buy at 50-60% of estimated value</li>
+          <li><strong>Protection Against Errors:</strong> Even if your analysis is wrong, you still profit</li>
+          <li><strong>Downside Protection:</strong> Limits losses if things go wrong</li>
+          <li><strong>Patience Required:</strong> Wait for the right price - don't chase</li>
+          <li><strong>Quantitative:</strong> Based on hard numbers, not stories</li>
+        </ul>
+      </div>
+
+      <div class="explanation-card">
+        <h3>👨‍🏫 Graham's Influence</h3>
+        <p>Benjamin Graham is the father of modern value investing - his teachings shaped the greatest investors:</p>
+        <ul>
+          <li><strong>The Intelligent Investor:</strong> Published 1949, still the bible of investing</li>
+          <li><strong>Warren Buffett:</strong> Graham's student, followed his principles to billions</li>
+          <li><strong>Security Analysis:</strong> Co-authored with David Dodd, foundational textbook</li>
+          <li><strong>Focus on Data:</strong> Emphasize financial statements over speculation</li>
+          <li><strong>Legacy:</strong> Influenced generations of successful investors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <style>
-.graham-header {
+.screener-header {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
 
-.graham-card {
-  border-color: #10b981;
+.screener-title {
+  text-align: center;
+  color: white;
 }
 
-.graham-card h3 {
+.screener-emoji {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.screener-title h1 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.tagline {
+  font-size: 1.25rem;
+  font-style: italic;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-sm);
+}
+
+.attribution {
+  opacity: 0.8;
+  font-size: 0.875rem;
+}
+
+.screener-info {
+  padding: var(--spacing-3xl) 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-3xl);
+}
+
+.info-main h2 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.info-main p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.info-main ul {
+  margin-bottom: var(--spacing-xl);
+}
+
+.info-main li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.fun-fact {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.fun-fact h4 {
+  color: #166534;
+  margin-bottom: var(--spacing-sm);
+}
+
+.fun-fact p {
+  color: #14532d;
+  margin: 0;
+}
+
+.criteria-card {
+  background: var(--bg-card);
+  border: 2px solid #10b981;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  position: sticky;
+  top: 6rem;
+}
+
+.criteria-card h3 {
+  margin-bottom: var(--spacing-lg);
   color: #10b981;
 }
 
-.graham-card .criterion-value {
+.criterion {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.criterion:last-child {
+  border-bottom: none;
+}
+
+.criterion-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.criterion-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #10b981;
+  margin: var(--spacing-xs) 0;
+}
+
+.criterion-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.screener-demo {
+  padding: var(--spacing-3xl) 0;
+  background: var(--bg-secondary);
+}
+
+.section-description {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.results-table-container {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.disclaimer-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.update-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th {
+  background: var(--bg-secondary);
+  padding: var(--spacing-md);
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.results-table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.company-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.ticker {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.metric {
+  font-weight: 600;
+}
+
+.metric.good {
   color: #10b981;
 }
 
-.margin-badge {
+.metric.warn {
+  color: #f59e0b;
+}
+
+.margin-badge {\n  display: inline-block;
   display: inline-block;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -247,6 +492,111 @@ permalink: /screeners/graham/
 .margin-badge.moderate {
   background: #fef3c7;
   color: #92400e;
+}
+
+.table-legend {
+  display: flex;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-color);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.legend-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.legend-dot.good {
+  background: #10b981;
+}
+
+.legend-dot.warn {
+  background: #f59e0b;
+}
+
+.screener-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+}
+
+.learn-more {
+  padding: var(--spacing-3xl) 0;
+}
+
+.learn-more h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.criteria-explanations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.explanation-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.explanation-card h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.explanation-card p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.explanation-card ul {
+  margin: 0;
+}
+
+.explanation-card li {
+  margin-bottom: var(--spacing-sm);
+}
+
+@media (max-width: 1024px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .criteria-card {
+    position: static;
+  }
+
+  .table-legend {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .results-table {
+    font-size: 0.875rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: var(--spacing-sm);
+  }
+
+  .screener-actions {
+    flex-direction: column;
+  }
 }
 
 /* Ticker Analyzer Styles */
