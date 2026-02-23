@@ -152,12 +152,16 @@ permalink: /disclaimer/
 
 <style>
 .disclaimer-header {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  background: linear-gradient(135deg, var(--color-warning-bg) 0%, var(--color-warning-border) 100%);
 }
 
 .disclaimer-header h1 {
-  color: #92400e;
-  -webkit-text-fill-color: #92400e;
+  color: var(--color-warning-text);
+  -webkit-text-fill-color: var(--color-warning-text);
+}
+
+.disclaimer-header .lead {
+  color: var(--color-warning-text);
 }
 
 .disclaimer-content {
@@ -185,8 +189,8 @@ permalink: /disclaimer/
 }
 
 .disclaimer-section.important {
-  background: #fef3c7;
-  border: 2px solid #f59e0b;
+  background: var(--color-warning-bg);
+  border: 2px solid var(--color-warning-border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   margin-bottom: var(--spacing-2xl);
@@ -198,12 +202,12 @@ permalink: /disclaimer/
 }
 
 .disclaimer-section.important h2 {
-  color: #92400e;
+  color: var(--color-warning-text);
   margin-bottom: var(--spacing-md);
 }
 
 .disclaimer-section.important p {
-  color: #78350f;
+  color: var(--color-warning-text);
 }
 
 .disclaimer-section h2 {
@@ -225,8 +229,9 @@ permalink: /disclaimer/
 }
 
 .warning-box {
-  background: #fee2e2;
-  border-left: 4px solid #ef4444;
+  background: var(--color-warning-bg);
+  border-left: 4px solid var(--color-warning-border);
+  color: var(--color-warning-text);
   padding: var(--spacing-lg);
   border-radius: var(--border-radius);
   margin: var(--spacing-lg) 0;
@@ -234,11 +239,15 @@ permalink: /disclaimer/
 
 .warning-box p {
   margin-bottom: var(--spacing-sm);
-  color: #991b1b;
+  color: var(--color-warning-text);
 }
 
 .warning-box p:last-child {
   margin-bottom: 0;
+}
+
+.warning-box strong {
+  color: var(--color-warning-text);
 }
 
 .cta-box {
@@ -277,12 +286,21 @@ permalink: /disclaimer/
 }
 
 .sidebar-card.warning {
-  background: #fef3c7;
-  border-color: #f59e0b;
+  background: var(--color-warning-bg);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning-text);
 }
 
 .sidebar-card.warning h3 {
-  color: #92400e;
+  color: var(--color-warning-text);
+}
+
+.sidebar-card.warning ul {
+  color: var(--color-warning-text);
+}
+
+.sidebar-card.warning li {
+  color: var(--color-warning-text);
 }
 
 .sidebar-card h3 {
