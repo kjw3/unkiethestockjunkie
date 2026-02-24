@@ -60,11 +60,11 @@ async function generateImage(topic) {
   }
 
   const imagePrompt = generateImagePrompt(topic);
-
+  
+  // Try FLUX.1-schnell first (faster, 4 steps)
   try {
-    console.log('🎨 Generating illustration...');
+    console.log('🎨 Generating illustration with FLUX.1-schnell...');
     console.log(`   Prompt: ${imagePrompt.substring(0, 80)}...`);
-    console.log(`   API Key present: ${NVIDIA_API_KEY ? 'Yes (first 10 chars: ' + NVIDIA_API_KEY.substring(0, 10) + '...)' : 'No'}`);
 
     const response = await axios.post(
       'https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-schnell',
@@ -88,38 +88,75 @@ async function generateImage(topic) {
     console.log(`   Response status: ${response.status}`);
     console.log(`   Response data keys: ${Object.keys(response.data || {}).join(', ')}`);
 
-    let imageData = null;
-    
-    // Check for different response formats
-    if (response.data && response.data.image) {
-      imageData = response.data.image;
-    } else if (response.data && response.data.artifacts && response.data.artifacts.length > 0) {
-      // FLUX API returns artifacts array with base64 images
-      imageData = response.data.artifacts[0].base64 || response.data.artifacts[0];
-    }
-
+    let imageData = extractImageData(response.data);
     if (imageData) {
-      const imageBuffer = Buffer.from(imageData, 'base64');
-      const imageFileName = `${generateSlug(topic.title)}-${Date.now()}.jpg`;
-      const imagePath = path.join(IMAGES_DIR, imageFileName);
+      return saveImage(imageData, topic);
+    }
+    
+    console.log(`   ⚠️ Schnell returned no image, trying dev variant...`);
+  } catch (error) {
+    console.log(`   ⚠️ Schnell failed, trying dev variant...`);
+    console.log('     Error:', error.message);
+  }
+  
+  // Fallback to FLUX.1-dev (higher quality, 28 steps)
+  try {
+    console.log('🎨 Trying FLUX.1-dev...');
 
-      fs.writeFileSync(imagePath, imageBuffer);
-      console.log(`✅ Image generated: ${imageFileName}`);
+    const response = await axios.post(
+      'https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-dev',
+      {
+        prompt: imagePrompt,
+        width: 1024,
+        height: 1024,
+        seed: Math.floor(Math.random() * 1000000),
+        steps: 28
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${NVIDIA_API_KEY}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        timeout: 120000 // Longer timeout for dev variant
+      }
+    );
 
-      return `/assets/images/articles/${imageFileName}`;
-    } else {
-      console.log(`   ⚠️ No image in response`);
-      console.log(`   Response data:`, JSON.stringify(response.data, null, 2).substring(0, 200));
+    let imageData = extractImageData(response.data);
+    if (imageData) {
+      console.log('✅ Image generated with dev variant');
+      return saveImage(imageData, topic);
     }
   } catch (error) {
-    console.error('❌ Error generating image:', error.message);
+    console.error('❌ Both schnell and dev failed:', error.message);
     if (error.response) {
-      console.error('   Response status:', error.response.status);
-      console.error('   Response data:', error.response.data);
+      console.error('     Response:', error.response.data);
     }
   }
 
   return null;
+}
+
+// Helper: Extract image data from various API response formats
+function extractImageData(data) {
+  if (data && data.image) {
+    return data.image;
+  } else if (data && data.artifacts && data.artifacts.length > 0) {
+    return data.artifacts[0].base64 || data.artifacts[0];
+  }
+  return null;
+}
+
+// Helper: Save image to disk
+function saveImage(imageData, topic) {
+  const imageBuffer = Buffer.from(imageData, 'base64');
+  const imageFileName = `${generateSlug(topic.title)}-${Date.now()}.jpg`;
+  const imagePath = path.join(IMAGES_DIR, imageFileName);
+
+  fs.writeFileSync(imagePath, imageBuffer);
+  console.log(`✅ Image generated: ${imageFileName}`);
+
+  return `/assets/images/articles/${imageFileName}`;
 }
 
 function parseArticleFile(filepath) {

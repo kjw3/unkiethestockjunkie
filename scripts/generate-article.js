@@ -93,12 +93,109 @@ function selectUnusedTopic(topics, generated) {
   return { topic: unused[randomIndex], reset: false };
 }
 
-// Utility: Generate image using NVIDIA FLUX.1-schnell
+// Utility: Generate image using NVIDIA FLUX.1-schnell with fallback to dev
 async function generateImage(topic) {
   if (!NVIDIA_API_KEY) {
-    console.log('⚠️  No NVIDIA_API_KEY found. Skipping image generation.');
+    console.log('⚠️ No NVIDIA_API_KEY found. Skipping image generation.');
     return null;
   }
+
+  const imagePrompt = generateImagePrompt(topic);
+  
+  // Try FLUX.1-schnell first (faster, 4 steps)
+  try {
+    console.log('🎨 Generating illustration with FLUX.1-schnell...');
+    
+    const response = await axios.post(
+      'https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-schnell',
+      {
+        prompt: imagePrompt,
+        width: 1024,
+        height: 1024,
+        seed: Math.floor(Math.random() * 1000000),
+        steps: 4
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${NVIDIA_API_KEY}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        timeout: 60000
+      }
+    );
+
+    let imageData = extractImageData(response.data);
+    if (imageData) {
+      return saveImage(imageData, topic);
+    }
+    
+    console.log('⚠️ Schnell returned no image, trying dev variant...');
+  } catch (error) {
+    console.log('⚠️ Schnell failed, trying dev variant...');
+    console.log('  Error:', error.message);
+  }
+  
+  // Fallback to FLUX.1-dev (higher quality, 28 steps)
+  try {
+    console.log('🎨 Trying FLUX.1-dev...');
+    
+    const response = await axios.post(
+      'https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-dev',
+      {
+        prompt: imagePrompt,
+        width: 1024,
+        height: 1024,
+        seed: Math.floor(Math.random() * 1000000),
+        steps: 28
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${NVIDIA_API_KEY}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        timeout: 120000 // Longer timeout for dev variant
+      }
+    );
+
+    let imageData = extractImageData(response.data);
+    if (imageData) {
+      console.log('✅ Image generated with dev variant');
+      return saveImage(imageData, topic);
+    }
+  } catch (error) {
+    console.error('❌ Both schnell and dev failed:', error.message);
+    if (error.response) {
+      console.error('Response:', error.response.data);
+    }
+  }
+
+  return null;
+}
+
+// Helper: Extract image data from various API response formats
+function extractImageData(data) {
+  if (data && data.image) {
+    return data.image;
+  } else if (data && data.artifacts && data.artifacts.length > 0) {
+    // FLUX API returns artifacts array with base64 images
+    return data.artifacts[0].base64 || data.artifacts[0];
+  }
+  return null;
+}
+
+// Helper: Save image to disk
+function saveImage(imageData, topic) {
+  const imageBuffer = Buffer.from(imageData, 'base64');
+  const imageFileName = `${generateSlug(topic.title)}-${Date.now()}.jpg`;
+  const imagePath = path.join(IMAGES_DIR, imageFileName);
+
+  fs.writeFileSync(imagePath, imageBuffer);
+  console.log(`✅ Image generated: ${imageFileName}`);
+
+  return `/assets/images/articles/${imageFileName}`;
+}
 
   const imagePrompt = generateImagePrompt(topic);
   
