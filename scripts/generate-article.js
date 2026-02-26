@@ -197,61 +197,6 @@ function saveImage(imageData, topic) {
   return `/assets/images/articles/${imageFileName}`;
 }
 
-  const imagePrompt = generateImagePrompt(topic);
-  
-  try {
-    console.log('🎨 Generating illustration...');
-    
-    const response = await axios.post(
-      'https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-schnell',
-      {
-        prompt: imagePrompt,
-        width: 1024,
-        height: 1024,
-        seed: Math.floor(Math.random() * 1000000),
-        steps: 4
-      },
-      {
-        headers: {
-          'Authorization': `Bearer ${NVIDIA_API_KEY}`,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        timeout: 60000
-      }
-    );
-
-    let imageData = null;
-    
-    // Check for different response formats
-    if (response.data && response.data.image) {
-      imageData = response.data.image;
-    } else if (response.data && response.data.artifacts && response.data.artifacts.length > 0) {
-      // FLUX API returns artifacts array with base64 images
-      imageData = response.data.artifacts[0].base64 || response.data.artifacts[0];
-    }
-
-    if (imageData) {
-      // Decode base64 image
-      const imageBuffer = Buffer.from(imageData, 'base64');
-      const imageFileName = `${generateSlug(topic.title)}-${Date.now()}.jpg`;
-      const imagePath = path.join(IMAGES_DIR, imageFileName);
-
-      fs.writeFileSync(imagePath, imageBuffer);
-      console.log(`✅ Image generated: ${imageFileName}`);
-      
-      return `/assets/images/articles/${imageFileName}`;
-    }
-  } catch (error) {
-    console.error('❌ Error generating image:', error.message);
-    if (error.response) {
-      console.error('Response:', error.response.data);
-    }
-  }
-  
-  return null;
-}
-
 // Utility: Generate image prompt
 function generateImagePrompt(topic) {
   const basePrompt = "Modern minimalist editorial illustration, flat design style, vibrant gradient background with blues and purples, clean geometric shapes, abstract financial concept visualization, professional stock market theme, flat vector art style, no text, high quality, suitable for educational blog header";
