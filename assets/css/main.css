@@ -153,7 +153,6 @@ a:hover {
   border-bottom: 1px solid var(--border-color);
   z-index: 100;
   backdrop-filter: blur(10px);
-  background-color: rgba(var(--bg-primary), 0.9);
 }
 
 .header-content {
@@ -233,7 +232,11 @@ a:hover {
   background: none;
   border: none;
   cursor: pointer;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger {
@@ -272,6 +275,11 @@ a:hover {
   padding: var(--spacing-sm);
   border-radius: var(--border-radius);
   transition: background var(--transition-fast);
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .theme-toggle:hover {
@@ -319,6 +327,11 @@ a:hover {
 .btn-small {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
 }
 
 /* Main Content */
@@ -1271,9 +1284,9 @@ a:hover {
 
 @media (max-width: 768px) {
   .nav-toggle {
-    display: block;
+    display: flex;
   }
-  
+
   .nav-menu {
     display: none;
     position: absolute;
@@ -1286,38 +1299,123 @@ a:hover {
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-lg);
   }
-  
+
   .nav-menu.active {
     display: flex;
   }
-  
+
+  .nav-menu a {
+    padding: 0.875rem 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
   .nav-menu a::after {
     display: none;
   }
-  
+
   .section-header {
     flex-direction: column;
     gap: var(--spacing-md);
     text-align: center;
   }
-  
+
+  .section-title {
+    font-size: 2rem;
+  }
+
   .features-grid,
   .investors-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .footer-links {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }
-  
+
   .newsletter-form {
     flex-direction: column;
   }
-  
+
+  .newsletter-content h2 {
+    font-size: 1.75rem;
+  }
+
   .article-title,
   .guide-title {
     font-size: 1.75rem;
+  }
+}
+
+/* Small phones (iPhone SE and similar) */
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .features,
+  .investor-spotlight,
+  .recent-articles {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .article-title,
+  .guide-title {
+    font-size: 1.5rem;
+  }
+
+  .article-content,
+  .guide-content {
+    font-size: 1rem;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .mascot-img {
+    animation: none;
   }
 }
 

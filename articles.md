@@ -234,6 +234,25 @@ permalink: /articles/
     font-size: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .filter-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .articles-content {
+    padding: var(--spacing-2xl) 0;
+  }
+}
 </style>
 
 <script>

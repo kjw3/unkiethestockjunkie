@@ -11,18 +11,36 @@ document.addEventListener('DOMContentLoaded', function() {
       this.setAttribute('aria-expanded', !isExpanded);
       navMenu.classList.toggle('active');
     });
+
+    // Close menu when a nav link is clicked (mobile UX)
+    navMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close menu when tapping outside
+    document.addEventListener('click', function(e) {
+      if (navMenu.classList.contains('active') &&
+          !navMenu.contains(e.target) &&
+          !navToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
   
   // Dark Mode Toggle
   const themeToggle = document.querySelector('.theme-toggle');
   const themeIcon = document.querySelector('.theme-icon');
   
-  // Check for saved theme preference
+  // Check for saved theme preference, fall back to system preference
   const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-  }
+  const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = savedTheme || (systemDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', initialTheme);
+  updateThemeIcon(initialTheme);
   
   if (themeToggle) {
     themeToggle.addEventListener('click', function() {
