@@ -56,7 +56,8 @@ layout: default
       <a href="/articles" class="view-all">View All Articles →</a>
     </div>
     <div class="articles-grid">
-      {% for article in site.articles reversed limit:6 %}
+      {% assign recent_articles = site.articles | reverse %}
+      {% for article in recent_articles limit:6 %}
         {% include article-card.html article=article %}
       {% endfor %}
     </div>
