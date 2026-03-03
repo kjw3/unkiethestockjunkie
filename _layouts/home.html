@@ -49,6 +49,20 @@ layout: default
   </div>
 </section>
 
+<section id="articles" class="recent-articles">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Fresh from Unkie</h2>
+      <a href="/articles" class="view-all">View All Articles →</a>
+    </div>
+    <div class="articles-grid">
+      {% for article in site.articles reversed limit:6 %}
+        {% include article-card.html article=article %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="investor-spotlight">
   <div class="container">
     <h2 class="section-title">Meet the Legends</h2>
@@ -77,20 +91,6 @@ layout: default
         <p>The activist investor. Finds undervalued companies and pushes for change.</p>
         <span class="investor-cta">Try the Icahn Screener →</span>
       </a>
-    </div>
-  </div>
-</section>
-
-<section id="articles" class="recent-articles">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Fresh from Unkie</h2>
-      <a href="/articles" class="view-all">View All Articles →</a>
-    </div>
-    <div class="articles-grid">
-      {% for article in site.articles limit:6 %}
-        {% include article-card.html article=article %}
-      {% endfor %}
     </div>
   </div>
 </section>
