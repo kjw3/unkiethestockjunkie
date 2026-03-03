@@ -14,42 +14,33 @@ permalink: /articles/
 
 <section class="articles-content">
   <div class="container">
-    <div class="articles-grid">
-      
-<div class="articles-sidebar">
-<div class="filters-card">
-<h3>Filter Articles</h3>
 
-<div class="filter-buttons">
- <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All Articles</button>
- <button class="filter-btn" data-filter="beginner" onclick="filterArticles('beginner')">Beginner</button>
- <button class="filter-btn" data-filter="intermediate" onclick="filterArticles('intermediate')">Intermediate</button>
- <button class="filter-btn" data-filter="advanced" onclick="filterArticles('advanced')">Advanced</button>
-</div>
-
-<div class="results-info">
-<p id="results-count">Showing all articles</p>
-</div>
-</div>
-
-<div class="daily-update-card">
-<h3>🔄 Daily Updates</h3>
-<p>New articles are automatically generated every day at 10:17 AM UTC. Check back tomorrow for fresh content!</p>
-</div>
-</div>
-      
-      <div class="articles-list" id="articles-list">
-        {% for article in site.articles reversed %}
-          {% include article-card.html article=article %}
-        {% else %}
-          <div class="no-articles">
-            <h3>No articles yet</h3>
-            <p>Articles are generated automatically each day. Check back soon!</p>
-          </div>
-        {% endfor %}
+    <div class="articles-toolbar">
+      <div class="filter-row">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All Articles</button>
+          <button class="filter-btn" data-filter="beginner" onclick="filterArticles('beginner')">Beginner</button>
+          <button class="filter-btn" data-filter="intermediate" onclick="filterArticles('intermediate')">Intermediate</button>
+          <button class="filter-btn" data-filter="advanced" onclick="filterArticles('advanced')">Advanced</button>
+        </div>
+        <div class="toolbar-meta">
+          <span id="results-count" class="results-count">Showing all articles</span>
+          <span class="daily-badge">🔄 New article every day</span>
+        </div>
       </div>
-      
     </div>
+
+    <div class="articles-list" id="articles-list">
+      {% for article in site.articles reversed %}
+        {% include article-card.html article=article %}
+      {% else %}
+        <div class="no-articles">
+          <h3>No articles yet</h3>
+          <p>Articles are generated automatically each day. Check back soon!</p>
+        </div>
+      {% endfor %}
+    </div>
+
   </div>
 </section>
 
@@ -66,7 +57,7 @@ permalink: /articles/
 <style>
 .page-header {
   background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-2xl) 0;
   text-align: center;
 }
 
@@ -85,50 +76,42 @@ permalink: /articles/
 }
 
 .articles-content {
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-2xl) 0;
 }
 
-.articles-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: var(--spacing-2xl);
+/* Horizontal filter toolbar */
+.articles-toolbar {
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
 }
 
-.articles-sidebar {
+.filter-row {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-
-.filters-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-}
-
-.filters-card h3 {
-  margin-bottom: var(--spacing-lg);
-  font-size: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 .filter-buttons {
   display: flex;
-  flex-direction: column;
   gap: var(--spacing-sm);
+  flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1.25rem;
   border: 2px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: 9999px;
   background: var(--bg-primary);
   color: var(--text-secondary);
   font-family: var(--font-sans);
   font-weight: 600;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: all var(--transition-fast);
-  text-align: left;
+  white-space: nowrap;
 }
 
 .filter-btn:hover {
@@ -147,42 +130,37 @@ permalink: /articles/
   border-color: var(--color-primary-dark);
 }
 
-.results-info {
-  margin-top: var(--spacing-md);
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--border-color);
+.toolbar-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
 }
 
-.results-info p {
+.results-count {
   font-size: 0.875rem;
   color: var(--text-muted);
-  margin: 0;
 }
 
-.daily-update-card {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-}
-
-.daily-update-card h3 {
-  color: #92400e;
-  margin-bottom: var(--spacing-sm);
-  font-size: 1.125rem;
-}
-
-.daily-update-card p {
+.daily-badge {
+  font-size: 0.8125rem;
   color: #78350f;
-  font-size: 0.875rem;
-  margin: 0;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
+/* 4-column article grid on desktop */
 .articles-list {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: var(--spacing-lg);
 }
 
 .no-articles {
+  grid-column: 1 / -1;
   text-align: center;
   padding: var(--spacing-3xl);
   background: var(--bg-card);
@@ -219,62 +197,67 @@ permalink: /articles/
   margin-bottom: var(--spacing-xl);
 }
 
-@media (max-width: 1024px) {
-  .articles-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .articles-sidebar {
-    order: -1;
-  }
-}
-
 @media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;
+  }
+
+  .toolbar-meta {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
 @media (max-width: 480px) {
   .page-header {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) 0;
   }
 
   .page-header h1 {
     font-size: 1.75rem;
   }
 
+  .articles-content {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .articles-list {
+    grid-template-columns: 1fr;
+  }
+
   .filter-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 
-  .articles-content {
-    padding: var(--spacing-2xl) 0;
+  .filter-btn {
+    border-radius: var(--border-radius);
+    text-align: center;
+  }
+
+  .daily-badge {
+    display: none;
   }
 }
 </style>
 
 <script>
-// Client-side filtering by difficulty level
 function filterArticles(filter) {
   const resultsCount = document.getElementById('results-count');
   const buttons = document.querySelectorAll('.filter-btn');
   const articles = document.querySelectorAll('.article-card');
-  
-  // Update active button
+
   buttons.forEach(btn => {
     btn.classList.remove('active');
     if (btn.dataset.filter === filter) {
       btn.classList.add('active');
     }
   });
-  
-  // Filter articles
+
   let visibleCount = 0;
   articles.forEach(article => {
     const articleDifficulty = article.dataset.difficulty;
-    
     if (filter === 'all' || articleDifficulty === filter) {
       article.style.display = '';
       visibleCount++;
@@ -282,8 +265,7 @@ function filterArticles(filter) {
       article.style.display = 'none';
     }
   });
-  
-  // Update results count
+
   if (filter === 'all') {
     resultsCount.textContent = `Showing all ${visibleCount} articles`;
   } else {
